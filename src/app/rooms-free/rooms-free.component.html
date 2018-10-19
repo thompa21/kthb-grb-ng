@@ -1,0 +1,30 @@
+<!--a routerLink="">
+  <span>free</span>
+</a-->
+<h2>Lediga grupprum just nu({{currenthour}} - {{nexthour}})</h2>
+<div style = "display: flex;flex-direction:row">
+  <div style = "flex:1;display: flex;flex-direction:row;flex-wrap:wrap">
+    <!--div *ngFor="let room of rooms let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" style="height:100px;"-->
+    <!--div *ngFor="let room of currentroomstatus let index=index; let odd=odd; let even=even;" class="{{'room' + room.status}}" style="color:white;height:80px;display:flex;align-items:center;justify-content:center;margin: 5px 0px">
+        <div style="transform: rotate(-45deg);top: 0px;position: relative;">{{room.roomname}}</div>
+    </div-->
+    <div *ngFor="let room of rooms let index=index; let odd=odd; let even=even;" class="{{'roomfree'}}" style="color:white;width:150px;height:80px;display:flex;align-items:center;justify-content:center;margin: 5px 5px;padding:5px">
+      <div style="transform: rotate(-0deg);top: 0px;position: relative">{{room.roomnumber + ". " + room.roomname}}</div>
+  </div>
+  </div>
+
+  <!--div *ngFor="let dates of bookings" style="flex:1">
+    <div *ngFor="let rooms of dates.rooms let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }"  style="display:flex;align-items:center;height:85px;margin: 5px 0px">
+      <div style = "color:white;flex-wrap:wrap;display: flex;flex-direction:row;padding:0px 5px">
+          <div *ngFor="let bookings of rooms.bookings">
+              <div *ngIf="bookings.status == 'free'" [ngClass]="{currenthour: currenthour == bookings.hour}" class="{{bookings.status}}" style="">
+                <span>{{bookings.hour}}</span>
+              </div>
+          </div>
+          <div style="color:black;" *ngIf="rooms.bookings == 0">
+            No available times today
+          </div>
+        </div>
+      </div>
+  </div-->
+</div>

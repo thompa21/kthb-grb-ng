@@ -1,0 +1,39 @@
+.closed {
+    background-color: rgb(197, 197, 197);
+}
+
+.busy {
+    background-color: rgb(207, 104, 104);
+}
+
+.roombusy {
+    background-color: rgba(207, 104, 104,1);
+}
+
+.busy_confirm, .roombusy_confirm {
+    background-color: rgb(156, 120, 61);
+}
+
+.busy_tentative, roombusy_tentative {
+    background-color: rgb(191, 206, 34);
+}
+
+.roomfree {
+    background-color: rgba(122, 189, 122, 1);
+}
+
+.free {
+    background-color: rgb(122, 189, 122);
+    min-width:30px;
+    text-align:center;
+    font-size:45px;
+    margin:5px;
+    border-radius:5px
+}
+
+.free.currenthour {
+    border: 3px solid rgb(29, 162, 13);
+    /*background-color: rgb(255, 255, 255);*/
+    /*opacity: 0.8;*/
+    border-radius: 50%;
+  }

@@ -1,0 +1,38 @@
+<!--h2>Grupprum</h2-->
+<!--mat-card-->
+<p><a [routerLink]="['/login']">Logout</a></p>
+<a routerLink="freerooms">
+  <span>free</span>
+</a>
+<div class="rooms" style = "display: flex;flex-direction:row;width:900px;align-items: center;justify-content: center;">
+  <div style="flex:1;max-width:100px;text-align:center;font-size: 26px;">KTHB</div>
+  <div *ngFor="let dates of bookings" style="flex:1;padding:0px 5px;text-align:center;display:flex;flex-direction:column">
+      <div style="font-size:26px;color: tomato;text-align: left;flex:1">{{dates.daynumber}}</div>
+      <div style="text-align: left;flex:1">{{dates.weekday}}</div>
+  </div>
+</div>
+<div style = "display: flex;flex-direction:row;width:900px">
+  <div style = "max-width:100px;flex:1;display: flex;flex-direction:column;">
+    <div *ngFor="let room of rooms let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" style="height:100px;">
+    <!--div *ngFor="let roomstatus of currentroomstatus let index=index; let odd=odd; let even=even;" class="{{roomstatus.status}}" style="height:100px;"-->
+        <div style="transform: rotate(-45deg);top: 40px;position: relative;">{{room.roomname}}</div>
+    </div>
+  </div>
+
+  <div *ngFor="let dates of bookings" style="flex:1">
+    <!--a class = "" routerLink="/detail/{{room.roomnumber}}">
+      <span class="badge">{{dates}}</span> {{"dfffd"}
+    </a-->
+    
+    <div *ngFor="let rooms of dates.rooms let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }"  style="height:100px;">
+        <div style = "color:white;flex-wrap:wrap;display: flex;flex-direction:row;padding:0px 5px">
+          <div *ngFor="let bookings of rooms.bookings">
+              <div *ngIf="bookings.status != 'dummy'" [ngClass]="{'currenthour': currenthour == bookings.hour && currentdate == dates.date }" class="{{bookings.status}}" style="min-width:30px;text-align:center">
+                <span >{{bookings.hour}}</span>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!--/mat-card-->

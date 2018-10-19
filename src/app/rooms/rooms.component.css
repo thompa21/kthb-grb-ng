@@ -1,0 +1,33 @@
+.closed {
+  background-color: rgb(197, 197, 197);
+  }
+
+.busy {
+  background-color: rgb(209, 64, 64);
+  }
+
+.busy_confirm {
+  background-color: rgb(214, 127, 28);
+}
+
+.busy_tentative {
+  background-color: rgb(224, 212, 44);
+}
+
+.free {
+  background-color: rgb(122, 189, 122);
+}
+
+.currenthour {
+  /*border: 1px solid rgb(107, 193, 250);*/
+  /*background-color: rgba(107, 193, 250, 0.37);*/
+  /*opacity: 0.8;*/
+}
+
+.even { 
+  /* background-color: rgb(240, 240, 240); */
+}
+
+.odd { 
+  /* background-color: rgb(199, 199, 199); */
+}
